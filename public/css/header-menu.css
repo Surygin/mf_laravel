@@ -1,0 +1,262 @@
+#header__menu {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+}
+
+.header__menu-btn {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background-color: #F82A04;
+
+  cursor: pointer;
+  z-index: 20;
+
+  box-shadow: 0 4px 12px rgba(248, 42, 4, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header__menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(248, 42, 4, 0.3);
+}
+
+.header__menu-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(248, 42, 4, 0.2);
+}
+
+.header__menu-btn span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  border-radius: 2px;
+
+  background-color: #fff;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+
+/* =========================
+   Боковое меню
+   ========================= */
+
+.header__menu-body {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 360px;
+  max-width: 90vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 90px 0 30px;
+
+  list-style: none;
+
+  background: #fff;
+
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+
+  z-index: 21;
+
+  transform: translateX(-105%);
+
+  transition: transform 0.35s ease;
+
+  overflow-y: auto;
+}
+
+.header__menu-body.active {
+  transform: translateX(0);
+}
+
+
+/* =========================
+   Пункты меню
+   ========================= */
+
+.header__menu-body li a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 16px 35px;
+
+  color: #575757;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #f1f1f1;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.header__menu-body li a:hover {
+  color: #F82A04;
+
+  background-color: #fff7f5;
+
+  padding-left: 45px;
+}
+
+
+/* =========================
+   Кнопка закрытия
+   ========================= */
+
+.header__menu-body li .header__menu-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 8px;
+
+  cursor: pointer;
+
+  opacity: 0.6;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header__menu-body li .header__menu-close:hover {
+  opacity: 1;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================
+   Затемнение страницы
+   ========================= */
+
+.header__menu-link::before {
+  content: '';
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+  z-index: 99;
+}
+
+.header__menu-link.menu-open::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================
+   Анимация бургера → X
+   ========================= */
+
+.header__menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.header__menu-contacts p {
+    margin: 0;
+}
+
+.header__menu-contacts p + p {
+    margin-top: 10px;
+}
+
+.header__menu-contacts a {
+    display: inline-block;
+
+    color: #575757;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.header__menu-contacts a:hover {
+    color: #f82a04;
+}
+
+.header__menu-contacts-mail {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+
+.header__menu-social {
+    margin-top: 25px;
+}
+
+.header__menu-moscow {
+    display: inline-block;
+
+    color: #f82a04;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.header__menu-moscow:hover {
+    color: #575757;
+}

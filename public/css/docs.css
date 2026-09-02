@@ -1,0 +1,32 @@
+.docs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.docs li {
+    margin: 0;
+}
+
+.docs li a {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    color: #575757;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f1f1;
+    transition: color 0.2s ease, background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.docs li:first-child a {
+    border-top: 1px solid #f1f1f1;
+}
+
+.docs li a:hover {
+    color: #f82a04;
+    padding-left: 26px;
+    background-color: #fafafa;
+}
