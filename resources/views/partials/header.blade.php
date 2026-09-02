@@ -14,7 +14,7 @@
                         </p>
 
                         <ul class="header__menu-body">
-                            <li><img class="header__menu-close" src="img/header/close_btn.svg" alt="Закрыть меню"></li>
+                            <li><img class="header__menu-close" src="{{ asset('img/header/close_btn.svg') }}" alt="Закрыть меню"></li>
                             <li><a href="/">Главная</a></li>
                             <li><a href="/#help">Кому нужна помощь?</a></li>
                             <li><a href="{{ route('documents') }}">Документы</a></li>

@@ -4,6 +4,7 @@
     'value' => '',
     'placeholder' => null,
     'rows' => 4,
+    'type' => '',
     'class' => 'form-control mb-2',
     'id' => null,
 ])
@@ -20,6 +21,7 @@
         id="{{ $id }}"
         name="{{ $name }}"
         rows="{{ $rows }}"
+        type="{{ $type }}"
         class="{{ $class }} @error($name) is-invalid @enderror"
         placeholder="{{ $placeholderText }}"
         {{ $attributes }}

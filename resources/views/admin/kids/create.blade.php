@@ -46,6 +46,7 @@
                                 @include(
                                     'admin.components.form.textarea',
                                     [
+                                    'id' => 'content',
                                     'name' => 'history',
                                     'label' => 'История ребенка',
                                     'value' => old('history'),

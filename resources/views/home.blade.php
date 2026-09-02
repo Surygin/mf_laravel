@@ -126,7 +126,7 @@
                                 </p>
 
                                 <p>
-                                    <a class="help__link" href="{{ route('person') }}">
+                                    <a class="help__link" href="{{ route('person', $kid->id) }}">
                                         История {{ $kid->declension }}
                                     </a>
                                 </p>
@@ -223,7 +223,7 @@
                                 </p>
 
                                 <p>
-                                    <a class="help__link" href="{{ route('person') }}">
+                                    <a class="help__link" href="{{ route('person', $kid->id)  }}">
                                         История {{ $kid->declension }}
                                     </a>
                                 </p>
