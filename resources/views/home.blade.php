@@ -13,12 +13,12 @@
 
                         <div class="main__text-title">
 
-                            <img id="heart_1" class="img__fly" src="img/main/Heart1.png" alt="heart1">
+                            <img id="heart_1" class="img__fly" src="{{ asset('img/main/Heart1.png') }}" alt="heart1">
 
                             <h1>
                                 Благотворительный фонд Марии Леонтьевой
 
-                                <img id="heart_2" class="img__fly" src="img/main/Heart2.png" alt="heart2">
+                                <img id="heart_2" class="img__fly" src="{{ asset('img/main/Heart2.png') }}" alt="heart2">
                             </h1>
 
                         </div>
@@ -41,7 +41,7 @@
                             Стать&nbsp;волонтером
                         </a>
 
-                        <a href="/?page=help_qr" class="btn main__btn main__btn-reverse">
+                        <a href="{{ route('qr-sber') }}" class="btn main__btn main__btn-reverse">
                             Помочь&nbsp;QR
                         </a>
 

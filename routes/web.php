@@ -13,6 +13,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/history', [FrontPageController::class, 'about'])->name('history');
 Route::get('/sms', [FrontPageController::class, 'sms'])->name('sms');
+Route::get('/qr-sber', [FrontPageController::class, 'qrSber'])->name('qr-sber');
 Route::get('/person/{kid}/show', [HomeController::class, 'person'])->name('person');
 
 Route::get('/reports', function () {

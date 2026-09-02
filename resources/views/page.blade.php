@@ -23,7 +23,7 @@
             <!-- Текст -->
             <div class="row">
 
-                <div class="offset-lg-3 col-lg-6 col-12">
+                <div class="offset-lg-2 col-lg-8 col-12">
 
                     <div class="person__descr">
 

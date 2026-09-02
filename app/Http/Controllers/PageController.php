@@ -20,4 +20,10 @@ class PageController extends Controller
         $page = Page::where('id', 3)->first();
         return \view('page', compact('page'));
     }
+
+    public function qrSber(): View
+    {
+        $page = Page::where('id', 4)->first();
+        return \view('page', compact('page'));
+    }
 }
