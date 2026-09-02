@@ -13,6 +13,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/history', [FrontPageController::class, 'about'])->name('history');
 Route::get('/sms', [FrontPageController::class, 'sms'])->name('sms');
+Route::get('/person/{kid}/show', [HomeController::class, 'person'])->name('person');
 
 Route::get('/reports', function () {
     return view('reports');
@@ -21,10 +22,6 @@ Route::get('/reports', function () {
 Route::get('/documents', function () {
     return view('docs');
 })->name('documents');
-
-Route::get('/person', function () {
-    return view('person');
-})->name('person');
 
 //Админка
 

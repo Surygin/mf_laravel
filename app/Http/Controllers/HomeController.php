@@ -24,4 +24,9 @@ class HomeController extends Controller
 
         return \view('home', compact('activeKids','closedKids'));
     }
+
+    public function person(Kid $kid): View
+    {
+        return \view('person', compact('kid'));
+    }
 }

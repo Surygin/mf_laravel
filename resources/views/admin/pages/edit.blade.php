@@ -38,6 +38,8 @@
                                 @include(
                                     'admin.components.form.textarea',
                                     [
+                                    'id' => 'content',
+                                    'type' =>'hidden',
                                     'name' => 'content',
                                     'label' => 'Текст на странице',
                                     'class' => 'form-control',
@@ -46,6 +48,9 @@
                                     'rows' => 10
                                     ]
                                 )
+
+                                <!-- Поле для редактора -->
+{{--                                <div id="editor-container" class="form-control"></div>--}}
 
                                 <div class="d-flex gap-2">
                                     <button class="btn btn-more">
