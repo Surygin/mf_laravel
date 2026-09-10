@@ -19,6 +19,7 @@
                             <li><a href="/#help">Кому нужна помощь?</a></li>
                             <li><a href="{{ route('documents') }}">Документы</a></li>
                             <li><a href="{{ route('reports') }}">Отчеты</a></li>
+                            <li><a href="{{ route('promo.codes') }}">Активный гражданин</a></li>
                             <li><a href="{{ route('history') }}">История фонда</a></li>
                             <li><a href="https://cloud.mail.ruxXTt/F6cFe6AvU">Активный гражданин</a></li>
                             <li><a href="{{ route('sms') }}">СМС - помощь</a></li>
