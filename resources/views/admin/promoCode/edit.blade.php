@@ -9,15 +9,17 @@
                     <div class="article">
 
                         <div class="article__box mb-5">
-                            <h3 class="mb-5">{{ $title ?? 'Добавить документ' }}</h3>
+                            <h3 class="mb-5">{{ $title ?? 'Изменить документ' }}</h3>
 
-                            <form action="{{ route('admin.docs.store') }}" class="form mb-5" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.promo-codes.update', $promoCode->id) }}" class="form mb-5" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                @method('put')
                                 @include(
                                     'admin.components.form.input',
                                     [
                                     'name' => 'title',
                                     'label' => 'Название документа',
+                                    'value' => old('title', $promoCode->title ?? ''),
                                     'placeholder' => 'Введите название документа'
                                     ]
                                 )
@@ -27,6 +29,16 @@
                                     [
                                     'name' => 'url',
                                     'label' => 'Файл документа',
+                                    'value' => old('title', $promoCode->url ?? ''),
+                                    ]
+                                )
+
+                                @include(
+                                    'admin.components.form.date',
+                                    [
+                                    'name' => 'date',
+                                    'label' => 'Дата документа',
+                                    'value' => old('title', $promoCode->date ?? ''),
                                     ]
                                 )
 
@@ -34,7 +46,7 @@
                                     <button class="btn btn-more">
                                         {{ $submit ?? 'Сохранить' }}
                                     </button>
-                                    <a href="{{ route('admin.docs') }}" class="btn btn-more">
+                                    <a href="{{ route('admin.promo-codes') }}" class="btn btn-more">
                                         Отмена
                                     </a>
                                 </div>

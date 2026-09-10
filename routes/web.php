@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CKEditorController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\Admin\KidController;
+use App\Http\Controllers\Admin\PromoCodeController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\RequisiteController;
 use App\Http\Controllers\HomeController;
@@ -21,6 +22,8 @@ Route::get('/person/{kid}/show', [HomeController::class, 'person'])->name('perso
 Route::get('/reports', [HomeController::class, 'reports'])->name('reports');
 
 Route::get('/documents', [HomeController::class, 'docs'])->name('documents');
+
+Route::get('/promo_codes', [HomeController::class, 'promoCodes'])->name('promo.codes');
 
 //Админка
 
@@ -55,6 +58,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/reports/{report}/edit', [ReportController::class, 'edit'])->name('admin.reports.edit');
     Route::put('/reports/{report}', [ReportController::class, 'update'])->name('admin.reports.update');
     Route::get('/reports/{report}/delete', [ReportController::class, 'destroy'])->name('admin.reports.delete');
+
+    Route::get('/promo-codes', [PromoCodeController::class, 'index'])->name('admin.promo-codes');
+    Route::get('/promo-codes/create', [PromoCodeController::class, 'create'])->name('admin.promo-codes.create');
+    Route::post('/promo-codes', [PromoCodeController::class, 'store'])->name('admin.promo-codes.store');
+    Route::get('/promo-codes/{promoCode}/edit', [PromoCodeController::class, 'edit'])->name('admin.promo-codes.edit');
+    Route::put('/promo-codes/{promoCode}', [PromoCodeController::class, 'update'])->name('admin.promo-codes.update');
+    Route::get('/promo-codes/{promoCode}/delete', [PromoCodeController::class, 'destroy'])->name('admin.promo-codes.delete');
 
     Route::get('/contacts/edit', [ContactController::class, 'edit'])->name('contacts.edit');
     Route::post('/contacts/update', [ContactController::class, 'update'])->name('contacts.update');

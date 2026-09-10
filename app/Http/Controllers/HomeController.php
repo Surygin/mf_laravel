@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Document;
 use App\Models\Kid;
+use App\Models\PromoCode;
 use App\Models\Report;
 use App\Models\Requisite;
 use Illuminate\Http\Request;
@@ -42,5 +43,11 @@ class HomeController extends Controller
     {
         $reports = Report::all();
         return \view('reports', compact('reports'));
+    }
+
+    public function promoCodes(): View
+    {
+        $promoCodes = PromoCode::all();
+        return \view('promoCodes', compact('promoCodes'));
     }
 }

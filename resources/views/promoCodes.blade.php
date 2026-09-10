@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="offset-lg-2 col-lg-8 col-12">
                     <div class="person__descr">
-                        <h2 class="mb-5">Отчёты</h2>
+                        <h2 class="mb-5">Промокоды "Активный гражданин"</h2>
                         <ul class="docs">
-                            @foreach($reports as $doc)
+                            @foreach($promoCodes as $doc)
                                 <li> <a href="{{ $doc->url }}" download> {{ $doc->title }} </a> </li>
                             @endforeach
                         </ul>

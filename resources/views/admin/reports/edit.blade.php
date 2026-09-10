@@ -46,7 +46,7 @@
                                     <button class="btn btn-more">
                                         {{ $submit ?? 'Сохранить' }}
                                     </button>
-                                    <a href="{{ url()->previous() }}" class="btn btn-more">
+                                    <a href="{{ route('admin.reports') }}" class="btn btn-more">
                                         Отмена
                                     </a>
                                 </div>

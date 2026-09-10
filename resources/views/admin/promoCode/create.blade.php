@@ -9,9 +9,9 @@
                     <div class="article">
 
                         <div class="article__box mb-5">
-                            <h3 class="mb-5">{{ $title ?? 'Добавить документ' }}</h3>
+                            <h3 class="mb-5">{{ $title ?? 'Добавить отчет' }}</h3>
 
-                            <form action="{{ route('admin.docs.store') }}" class="form mb-5" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.promo-codes.store') }}" class="form mb-5" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @include(
                                     'admin.components.form.input',
@@ -30,11 +30,19 @@
                                     ]
                                 )
 
+                                @include(
+                                    'admin.components.form.date',
+                                    [
+                                    'name' => 'date',
+                                    'label' => 'Дата документа',
+                                    ]
+                                )
+
                                 <div class="d-flex gap-2">
                                     <button class="btn btn-more">
                                         {{ $submit ?? 'Сохранить' }}
                                     </button>
-                                    <a href="{{ route('admin.docs') }}" class="btn btn-more">
+                                    <a href="{{ route('admin.promo-codes') }}" class="btn btn-more">
                                         Отмена
                                     </a>
                                 </div>
