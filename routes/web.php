@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\KidController;
 use App\Http\Controllers\Admin\PromoCodeController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\RequisiteController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController as FrontPageController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
@@ -27,11 +28,13 @@ Route::get('/promo_codes', [HomeController::class, 'promoCodes'])->name('promo.c
 
 //Админка
 
-Route::get('/admin/panel', function () {
-    return view('admin.test');
-})->name('admin');
+Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')
+    ->middleware('auth')
+    ->group(function () {
     Route::post('/ck/image/upload', [CKEditorController::class, 'imageUpload'])->name('ckeditor.image.upload');
 
     Route::get('/kids', [KidController::class, 'index'])->name('admin.kids');
